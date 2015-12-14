@@ -22,7 +22,7 @@ class Scraping
   end
 
   def self.get_product(link)
-    agent = Mechanize.new
+    agent = Matsushitaze.new
     page = agent.get(link)
     title = page.at('.moveInfoBox h1').inner_text
     image_url = page.at('.pictBox img')[:src] if page.at('.pictBox img')
